@@ -4,10 +4,12 @@
   links.forEach(function (link) {
     // adding event listeners to each link
     link.addEventListener("click", function () {
-      for (let index = 0; index < links.length; index++) {
-        const element = links[index];
-        //removes active class from link
-        element.classList.remove("active");
+      links.forEach(function (list) {
+        list.classList.remove("active");
+      });
+      //get the cliked link and add a class of active to the link
+      if (link) {
+        this.classList.add("active");
       }
     });
   });
